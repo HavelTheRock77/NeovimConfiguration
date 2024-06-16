@@ -3,7 +3,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+			"williamboman/mason-lspconfig.nvim",
 		},
 		config = function()
 			local mason = require("mason")
@@ -59,6 +59,6 @@ return {
 				},
 			}) -- require your null-ls config here (example below)
 		end,
-		Map("n", "<leader>gf", vim.lsp.buf.format),
+		Map("n", "<C-g>", vim.lsp.buf.format),
 	},
 }
