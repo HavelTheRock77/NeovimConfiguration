@@ -7,5 +7,6 @@ return {
 		require("huez").setup({
 			fallback = "default",
 		})
+		Map("n", "<leader>c", ": Huez<CR>", true)
 	end,
 }

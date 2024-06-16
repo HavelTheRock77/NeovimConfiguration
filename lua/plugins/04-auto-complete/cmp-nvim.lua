@@ -93,7 +93,7 @@ return {
 			},
 		})
 		-- Customization for Pmenu
-		vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
+		vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#282C34", bg= "NONE" })
 		vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "NONE" })
 
 		vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
