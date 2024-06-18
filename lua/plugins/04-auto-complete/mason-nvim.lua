@@ -36,6 +36,7 @@ return {
 			ensure_installed = {
 				"stylua",
 				"phpcbf",
+				"prettier",
 			},
 			integrations = {
 				["mason-lspconfig"] = true,
