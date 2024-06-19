@@ -52,7 +52,7 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
@@ -66,7 +66,7 @@ return {
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = function(entry, vim_item)
-					local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+					local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
 					local strings = vim.split(kind.kind, "%s", { trimempty = true })
 					kind.kind = " " .. (strings[1] or "") .. " "
 					kind.menu = "    (" .. (strings[2] or "") .. ")"
@@ -88,7 +88,7 @@ return {
 			},
 		})
 		-- Customization for Pmenu
-		vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#282C34", bg= "NONE" })
+		vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg= "NONE" })
 		vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "NONE" })
 
 		vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })

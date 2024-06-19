@@ -83,7 +83,6 @@ return {
 			capabilities = capabilities,
 			filetypes = {
 				"html",
-				"php",
 				"typescriptreact",
 				"javascriptreact",
 				"css",
@@ -112,7 +111,6 @@ return {
 			capabilities = capabilities,
 			filetypes = {
 				"html",
-				"php",
 				"typescriptreact",
 				"javascriptreact",
 				"css",

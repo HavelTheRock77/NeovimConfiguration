@@ -3,12 +3,12 @@
 vim.o.relativenumber = true
 vim.o.number = true
 vim.o.numberwidth = 1
-vim.o.shiftwidth = 2
+vim.o.shiftwidth = 4
 vim.o.clipboard = "unnamedplus"
 vim.o.showcmd = true
 vim.o.ruler = true
 vim.o.showmode = false
-vim.o.tabstop = 2
+vim.o.tabstop = 4
 vim.o.wrap = false
 vim.o.swapfile = false
 vim.o.termguicolors = true
