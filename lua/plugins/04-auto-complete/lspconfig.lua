@@ -105,6 +105,9 @@ return {
 		lspconfig["phpactor"].setup({
 			capabilities = capabilities,
 			filetypes = { "php" },
+			root_dir = function(_)
+				return vim.loop.cwd()
+			end
 		})
 
 		lspconfig["emmet_ls"].setup({
