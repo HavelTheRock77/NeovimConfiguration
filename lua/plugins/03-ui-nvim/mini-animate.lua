@@ -4,6 +4,10 @@ return {
 	config = function()
 		local animate = require("mini.animate")
 
-		animate.setup({})
+		animate.setup({
+			scroll = {
+				enabled = false
+			}
+		})
 	end,
 }
