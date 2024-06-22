@@ -8,9 +8,12 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"folke/todo-comments.nvim",
 		"folke/trouble.nvim",
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = function()
 		--NOTE: comments
+		--TODO: comments
+		--WARN: comments
 		require("todo-comments").setup()
 
 		local telescope = require("telescope")
@@ -33,7 +36,7 @@ return {
 					"node_modules",
 					"vendor",
 				},
-				path_display = { "smart" },
+				-- path_display = { "smart" },
 				mappings = {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -42,18 +45,23 @@ return {
 						["<C-t>"] = trouble_telescope.open,
 					},
 				},
+				extensions = {
+					["ui-select"] = {
+						require("telescope.themes").get_dropdown({})
+					}
+				}
 			},
 		})
 
 		telescope.load_extension("fzf")
-
+		telescope.load_extension("ui-select")
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<leader>p", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-		keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-		keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-		keymap.set("n", "<leader>F", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-		keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+		keymap.set("n", "<leader>p", "<cmd>Telescope find_files theme=dropdown<cr>", { desc = "Fuzzy find files in cwd" })
+		keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles theme=dropdown<cr>", { desc = "Fuzzy find recent files" })
+		keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep theme=dropdown<cr>", { desc = "Find string in cwd" })
+		keymap.set("n", "<leader>F", "<cmd>Telescope grep_string theme=dropdown<cr>", { desc = "Find string under cursor in cwd" })
+		keymap.set("n", "<leader>ft", "<cmd>TodoTelescope theme=dropdown<cr>", { desc = "Find todos" })
 	end,
 }
