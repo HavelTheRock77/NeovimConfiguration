@@ -37,6 +37,7 @@ return {
 				"stylua",
 				"phpcbf",
 				"prettier",
+				"php-debug-adapter",
 			},
 			integrations = {
 				["mason-lspconfig"] = true,

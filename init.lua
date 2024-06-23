@@ -11,5 +11,6 @@ require("lazy").setup({
 		{ import = "plugins.04-auto-complete" },
 		{ import = "plugins.05-code-editor" },
 		{ import = "plugins.06-git-integration" },
+		{ import = "plugins.07-debugger" },
 	},
 })
